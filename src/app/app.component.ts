@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'crudapp';
+
+  selectedFolder : string | null = null ;
+  selectedNote : {folderId:string, noteId:String} | null = null ;
+
+  selectFolder($event: any) {
+    this.selectedFolder = $event ;
+    // console.log($event);
+  }
+
+  selectNote($event: { folderId: string; noteId: String }) {
+    this.selectedNote= $event ;
+  }
 }

@@ -1,0 +1,38 @@
+.note{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.note-controls-container{
+  display: flex;
+  height: 40px;
+  width: 80%;
+  flex-direction: row-reverse;
+  /*justify-content: center;*/
+  align-self: center;
+}
+
+.note-content-container{
+  margin-top: 10px;
+  height: 80vh;
+  width: 80%;
+  /*border-style : solid;*/
+  /*border: #333333;*/
+  border-width: 1px;
+  border-radius: 5px;
+  justify-content: center;
+  align-self: center;
+}
+
+textarea{
+  align-self: center;
+  width: 97%;
+  height: 97%;
+  background-color: rgba(255,255,255,0);
+}
+
+.button-save{
+
+  /*margin-left: auto;*/
+}

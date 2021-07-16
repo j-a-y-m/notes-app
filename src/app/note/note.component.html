@@ -1,0 +1,29 @@
+<div class="note">
+
+  <p class="folders-none" *ngIf="!noteProps else selected ">Select a note!</p>
+
+  <ng-template #selected>
+<div class="note-controls-container">
+  <button class="button-save" mat-icon-button title="save" (click)="saveNote(noteContentText.value)">
+    <mat-icon>save</mat-icon>
+  </button>
+
+  <button class="button-save" mat-icon-button title="save" (click)="deleteNote()">
+    <mat-icon>delete</mat-icon>
+  </button>
+
+
+</div>
+<div class="note-content-container">
+<textarea [value]="content" #noteContentText class="textArea">
+
+</textarea>
+  <button mat-button>
+
+  </button>
+
+</div>
+
+  </ng-template>
+
+</div>

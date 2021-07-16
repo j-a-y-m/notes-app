@@ -1,0 +1,13 @@
+<form class="name-form" (ngSubmit)="submitInput(nameForm.value)" #nameForm="ngForm" name="nameForm">
+    <mat-form-field class="name-textarea" appearance="legacy">
+      <mat-label>{{inputType}} name</mat-label>
+        <input matInput placeholder="{{inputType}} name" ngModel name="name" id="name">
+
+      <!-- </textarea> -->
+    </mat-form-field>
+
+      <button  mat-raised-button color="primary" type="submit"  >
+        submit
+      </button>
+
+    </form>

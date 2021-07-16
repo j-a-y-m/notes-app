@@ -1,0 +1,17 @@
+ add products
+
+ add product stock
+
+ reduce product stock
+
+ remove product
+
+ buy product
+
+ product out of stock
+
+ upper part buy from product dropdown
+
+ lower part inventory
+
+

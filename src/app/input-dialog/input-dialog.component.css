@@ -1,0 +1,9 @@
+.name-form{
+    /* margin-left: 200px; */
+    /* height: 400px;
+    width: 300px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  

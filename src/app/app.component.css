@@ -1,0 +1,42 @@
+.app{
+    background-color: #EEEEEE;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.content{
+    background-color: #EEEEEE;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.app__router{
+    flex-grow: 4;
+}
+
+.app__folders{
+    width: 22vw;
+    padding: 5px;
+    background-color: #D6E0F0;
+    /* margin-left: 2px;
+margin-right: 2px; */
+}
+
+.app__notes{
+    width: 22vw;
+    padding: 5px;
+    background-color: #F1F3F8;
+/* margin-left: 2px;
+margin-right: 2px; */
+}
+
+.app__note{
+    margin-left: 2px;
+margin-right: 2px;
+    stroke: black;
+stroke-width: 3px;
+    flex-grow: 2;
+}
+
