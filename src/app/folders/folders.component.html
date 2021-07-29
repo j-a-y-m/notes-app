@@ -1,7 +1,7 @@
 <div class="folders-container">
 
 
-
+  <h1>Folders</h1>
 <!--<p class="folders-none" *ngIf="!(folders | async) ">Add new folder!</p>-->
   <p class="folders-none" *ngIf=" !foldersN || foldersN.length==0  ">Add new folder!</p>
  <div class="folders" >
@@ -13,11 +13,17 @@
 <!--     <hr>-->
 <!--   </div>-->
 
-   <div class="folder" *ngFor="let folder of foldersN  " matRipple (click)="selectFolder(folder.folderId)">
-     <p>
+   <div  *ngFor="let folder of foldersN  " >
+    <div class="folder" matRipple  (click)="selectFolder(folder.folderId)">
+     <p class="folder-name"  >
        {{folder.folderName}}
      </p>
-     <hr>
+     <button class="button-folder-delete" mat-icon-button  (click)="deleteFolder(folder.folderId,$event)" >
+       <mat-icon>delete</mat-icon>
+     </button>
+
+    </div>
+     <hr class="folder-separator">
    </div>
 
  </div>

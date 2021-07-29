@@ -11,12 +11,27 @@ export class AppComponent {
   selectedFolder : string | null = null ;
   selectedNote : {folderId:string, noteId:String} | null = null ;
 
-  selectFolder($event: any) {
-    this.selectedFolder = $event ;
+  selectFolder(folderId: string) {
+    if (this.selectedFolder!==folderId)
+    {
+      // this.selectedFolder = null ;
+      this.selectedNote= null ;
+
+    }
+    this.selectedFolder = folderId ;
     // console.log($event);
   }
 
   selectNote($event: { folderId: string; noteId: String }) {
+
+
     this.selectedNote= $event ;
+  }
+
+  onFolderDelete(folderId: string) {
+      if (folderId===this.selectedFolder)
+      {
+        this.selectedFolder= null;
+      }
   }
 }

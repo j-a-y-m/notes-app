@@ -11,7 +11,8 @@
 <!--      </p>-->
 <!--      <hr>-->
 <!--    </div>-->
-    <p class="notes-none" *ngIf="notesN.length===0 ">Add notes!</p>
+    <h1>Notes</h1>
+
     <div class="note" *ngFor="let note of notesN  " matRipple (click)="selectNote(note.noteId,folderId)">
       <p>
         {{note.noteName}}
@@ -20,6 +21,8 @@
     </div>
 
   </div>
+
+  <h2 class="notes-none" *ngIf="notesN.length===0 ">Add notes!</h2>
 
 
 

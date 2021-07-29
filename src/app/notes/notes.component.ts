@@ -72,6 +72,10 @@ export class NotesComponent implements OnInit, OnChanges, AfterViewInit, AfterCo
       })
 
       this.noteService.getFolders();
+    }else
+    {
+      this.selectedNote.emit(null);
+      this.notesN = [];
     }
 
 

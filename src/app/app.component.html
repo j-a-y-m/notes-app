@@ -103,7 +103,7 @@
 
 <div class="app" role="main">
 
-  <app-folders class="app__folders" (selectedFolder)="selectFolder($event)"></app-folders>
+  <app-folders class="app__folders" (selectedFolder)="selectFolder($event)" (folderDeleted)="onFolderDelete($event)"></app-folders>
   <app-notes class="app__notes" [folderId]="selectedFolder" *ngIf="selectedFolder" (selectedNote)="selectNote($event)"></app-notes>
   <app-note class="app__note" [noteProps]="selectedNote"></app-note>
 

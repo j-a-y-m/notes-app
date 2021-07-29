@@ -21,11 +21,6 @@ export class NoteService {
   getFolders()
   {
 
-    //const foldersSub = new Subject<Folder[]>();
-
-
-    //this.dataUpdate.subscribe(foldersSub)
-
 
     let folders = JSON.parse(localStorage.getItem('folders')) as Folder[] ;
     this.foldersSub.next(folders);
@@ -64,9 +59,22 @@ export class NoteService {
     this.foldersSub.next(newFolders);
   }
 
-  deleteFolder()
+  deleteFolder(folderId: string)
   {
+    let folders = JSON.parse(localStorage.getItem('folders')) as Folder[];
+    let folderIdx = 0;
+    for (let folder of folders) {
+      if (folder.folderId === folderId) {
+        folders.splice(folderIdx,1);
+        break;
+      }
+      folderIdx++;
+    }
+    localStorage.removeItem("folders");
+    localStorage.setItem('folders', JSON.stringify(folders));
+    const newFolders = JSON.parse(localStorage.getItem('folders')) as Folder[]
 
+    this.foldersSub.next(newFolders);
   }
 
   addNote(folderId : string, title : string)
@@ -78,7 +86,7 @@ export class NoteService {
     {
       if (folder.folderId === folderId)
       {
-        const note : Note = {noteId:id, noteName : title, noteContent : "test test"} ;
+        const note : Note = {noteId:id, noteName : title, noteContent : ""} ;
         folder.notes.push(note);
         console.log("new note serv "+ JSON.stringify(folder.notes));
         localStorage.removeItem("folders");
@@ -86,7 +94,7 @@ export class NoteService {
         break;
       }
     }
-    // const newFolders = JSON.parse(localStorage.getItem('folders'))["folders"] as Folder[];
+
     const newFolders = JSON.parse(localStorage.getItem('folders')) as Folder[]
     console.log("new note now folder serv "+ JSON.stringify(newFolders));
     this.foldersSub.next(newFolders);
@@ -154,20 +162,6 @@ export class NoteService {
       }
     }
 
-    //
-    // for (let folder of folders)
-    // {
-    //
-    // }
-
-    // folders.forEach((folder)=>{
-    //   if (folder.folderId ===  folderId)
-    //   {
-    //     folder.notes.filter((note)=>{
-    //       return !(note.noteId === noteId) ;
-    //     })
-    //   }
-    // })
 
     localStorage.removeItem("folders");
     localStorage.setItem('folders', JSON.stringify(folders));
