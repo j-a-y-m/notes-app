@@ -27,17 +27,14 @@ export class NoteComponent implements OnInit,OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
 
     this.noteProps = changes["noteProps"].currentValue;
-    console.log("sel note "+this.noteProps);
     if (this.noteProps){
       this.content = this.noteService.getNote(this.noteProps.folderId,this.noteProps.noteId).noteContent ;
-      console.log(this.content);
     }
 
 
   }
 
   saveNote(noteContent: string) {
-    console.log("noteContent "+noteContent);
     this.noteService.saveNote(this.noteProps.folderId,this.noteProps.noteId,noteContent);
     this.snackBar.open("Note saved",undefined, {
       duration: 2000

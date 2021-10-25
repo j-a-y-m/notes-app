@@ -98,7 +98,10 @@ export class NotesComponent implements OnInit, OnChanges, AfterViewInit, AfterCo
     noteNameInputDialogRef.afterClosed().subscribe({
       next : (data)=>{
         if (this.folderId){
+          if(!(data.inputName==""||data.inputName==" " ))
+        {
           this.noteService.addNote(this.folderId,data.inputName);
+        }
         }
 
       }

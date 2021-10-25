@@ -47,32 +47,18 @@ export class FoldersComponent implements OnInit, AfterViewInit, AfterContentInit
 
     this.noteService.getFolders()
 
-    //console.log("folder component "+JSON.stringify(this.folderrs, this.getCircularReplacer()));
-    //this.folders = of([1,2,3])
-    // this.noteService.addFolder("angular");
   }
-
-  // const getCircularReplacer = () => {
-  //   const seen = new WeakSet();
-  //   return (key, value) => {
-  //     if (typeof value === "object" && value !== null) {
-  //       if (seen.has(value)) {
-  //         console.log("cyclic "+value);
-  //         return;
-  //       }
-  //       seen.add(value);
-  //     }
-  //     return value;
-  //   };
-  // };
 
 
   newFolder(){
-    console.log("new folder click");
     const folderNameInputDialogRef = this.matDialog.open(InputDialogComponent,{data:{inputType:"Folder"}});
     folderNameInputDialogRef.afterClosed().subscribe({
       next : (data)=>{
-        this.noteService.addFolder(data.inputName);
+        if(!(data.inputName==""||data.inputName==" " ))
+        {
+          this.noteService.addFolder(data.inputName);
+        }
+        
       }
     })
 
