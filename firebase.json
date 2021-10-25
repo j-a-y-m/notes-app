@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "crudapp",
+      "public": "dist/crudapp",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

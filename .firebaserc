@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "notesapp-1ca7d": {
+      "hosting": {
+        "crudapp": [
+          "notesapp-1ca7d"
+        ]
+      }
+    }
+  }
+}
